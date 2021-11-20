@@ -1,0 +1,1 @@
+This is the git config where I keep the exercises that I do while following along the teachyourselfcs curriculum.

@@ -1,0 +1,81 @@
+2.
+
+(define (square x)
+  (* x x))
+
+(define (squares sentence)
+    (if (= (first sentence) (last sentence))
+        (square (first sentence))
+        (se (square (first sentence)) (squares (bf sentence)))))
+
+>(squares '(2 3 4 5))
+(4 9 16 25)
+
+3.
+
+
+(define (substitute wd wholesentence currentsentence)
+  (cond ((equal? wd 'me) 'you)
+        ((equal? wd 'i) 'you)
+        ((equal? wd 'you)
+         (cond ((equal? wd (first wholesentence))
+                (if (equal? wholesentence currentsentence)
+                    'i
+                    'me))
+               (else 'me)))
+         (else wd)))
+
+(define (switch sentence)
+  (define (sub-switch subsentence)
+    (cond
+      ((equal? (first subsentence) (last subsentence))
+           (substitute (first subsentence) sentence subsentence))
+        (else
+           (se
+            (substitute (first subsentence) sentence subsentence)
+            (sub-switch (bf subsentence))))))
+  (sub-switch sentence))
+
+>(switch '(you told me that i should wake you up))
+(i told you that you should wake me up)
+
+
+4.
+
+(define (ordered? numbers)
+  (cond ((equal? (first numbers) (last numbers)) #t)
+        ((> (first numbers) (first (bf numbers))) #f)
+        (else (ordered? (bf numbers)))))
+
+> (ordered? '(2 3 4 5))
+#t
+> (ordered? '(2 3 5 4))
+#f
+> (ordered? '(2 1 3 4 5))
+#f
+> (ordered? '(1 1 1 1))
+#t
+>
+
+
+5.
+
+(define (ends-e sentence)
+  (cond ((equal? (first sentence) (last sentence))
+         (if (equal? (last (first sentence)) 'e)
+             (first sentence)
+             ""))
+         ((equal? (last (first sentence)) 'e)
+            (se (first sentence) (ends-e (bf sentence))))
+         (else (ends-e (bf sentence)))))
+
+> (ends-e '(asd asde))
+asde
+> (ends-e '(asd asde esde asd asd asd esde))
+(asde esde)
+> (ends-e '(asd asde asd asd esde))
+(asde esde)
+> (ends-e '(asd asde asd asd esde esdevae))
+(asde esde esdevae)
+> (ends-e '(egy ketto harome negy ot hate hete nyolc kilence tize))
+(harome hate hete kilence tize)
