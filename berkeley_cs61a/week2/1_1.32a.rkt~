@@ -1,0 +1,22 @@
+(define (product fn a next b)
+  (if (equal? a b)
+      (fn a)
+      (* (fn a)
+         (product fn (next a) next b))
+      )
+  )
+
+
+
+
+(define (accumulate combiner null-value term a next b)
+  (if (equal? a b)
+      null-value
+      (combiner (term a)
+                (accumulate combiner (term a) term (next a) next b)))
+  )
+
+(define (newProduct fn a next b)
+  (accumulate (lambda (x y) (* x y)) (fn a) fn a next b))
+
+

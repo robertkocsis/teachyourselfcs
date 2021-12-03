@@ -1,0 +1,15 @@
+(define (repeated fn n)  
+  (define (aggregator iteration)
+    (display iteration)
+    (newline)
+    (if (= iteration n)
+        (lambda (x)  (fn x))
+        (lambda (x) (fn (aggregator (+ iteration 1)))
+        ))
+    )
+  (aggregator 0)
+  )
+
+(define (square x) (* x x))
+
+((repeated square 2) 5)
