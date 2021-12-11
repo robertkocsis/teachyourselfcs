@@ -1,0 +1,23 @@
+(define (cont-frac n d k)
+  (define (iter a k)
+    (if (= a k) (/ (n k) (d k))
+        (/ (n a)
+           (+ (d a) (iter (+ a 1) k)))
+        ))
+  (iter 1 k))
+
+(cont-frac (lambda (i) 1.0)
+           (lambda (i) 1.0)
+           15)
+
+(define (cont-frac-rec n d k)
+  (define (rec k)
+    (if (= 1 k) (/ (n k) (d k))
+        (/ (n (- k (- k 1)))
+           (+ (d (- k (- k 1))) (rec (- k 1))))
+        ))
+  (rec k))
+
+(cont-frac-rec (lambda (i) 1.0)
+               (lambda (i) 1.0)
+               15)

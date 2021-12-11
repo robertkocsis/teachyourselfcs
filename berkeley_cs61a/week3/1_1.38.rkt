@@ -1,0 +1,26 @@
+(define (cont-frac n d k)
+  (define (iter a k)
+    (if (= a k) (/ (n k) (d k))
+        (/ (n a)
+           (+ (d a) (iter (+ a 1) k)))
+        ))
+  (+ 2 (iter 1 k)))
+
+(define (even? n)
+  (= (remainder n 2) 0))
+
+(define (d x)
+  (define (valid? y)
+    (cond ((= y 2) #t)
+         ((< y 2) #f)
+         (else (valid? (- y 3)))))
+  (define (get-product y)
+    (if (= y 2) 2 (+ 2 (get-product (- y 3))))
+    )
+  (if (valid? x) (get-product x) 1)
+  )
+
+
+(cont-frac (lambda (i) 1.0)
+           (lambda (i) (d i))
+           15)
