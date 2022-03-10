@@ -1,0 +1,8 @@
+(load "obj")
+
+(define-class (random-number-generator range)
+  (instance-vars (count 0))
+  (method (number)
+          (set! count (+ 1 hunger))
+          (random range))
+  )

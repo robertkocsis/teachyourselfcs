@@ -1,0 +1,20 @@
+(load "obj.rkt")
+
+(define-class (coke-machine max-cans price)
+  (instance-vars (deposited-money 0))
+  (instance-vars (can-count 0))
+  (method (deposit amount)
+          (set! deposited-money (+ amount deposited-money)))
+  (method (coke)
+          (cond ((= can-count 0) '(Machine empty))
+                ((< deposited-money price) '(Not enough money))
+                (else (
+                       (set! can-count (- can-count 1))
+                       (set! deposited-money (- deposited-money price))
+                       deposited-money
+                       ))
+                )
+          (set! can-count (+ amount can-count)))
+  (method (fill amount)
+          (set! can-count (+ amount can-count)))
+  )
