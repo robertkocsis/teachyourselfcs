@@ -1,0 +1,13 @@
+#lang simply-scheme
+(define (plus x y)
+  (let ((tx (type x))
+        (ty (type y)))
+    (if (eq? tx ty)
+        (attach-tag tx (+ (contents x) (contents y)))
+        (let ((gxy (get tx ty))
+              (gyx (get ty tx)))
+          (cond ((number? gxy)
+                 (attach-tag ty (+ (* gxy (contents x)) (contents y))))
+                ((number? gyx)
+                 (attach-tag tx (+ (contents x) (* gyx (contents y)))))
+                (else (error "You can't add apples and oranges.")))))))

@@ -1,0 +1,15 @@
+#lang simply-scheme
+(define (entry tree) (car tree))
+(define (left-branch tree) (cadr tree))
+(define (right-branch tree) (caddr tree))
+(define (make-tree entry left right)
+  (list entry left right))
+
+(define my-tree (make-tree 8 (make-tree 5 '() '())
+                           (make-tree 12 '() '())))
+
+(define (max-fanout tree)
+  (cond ((null? tree) 0)
+        (max (length tree) (max-fanout (left-branch tree)) (max-fanout (right-branch tree)))
+        )
+  )

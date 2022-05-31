@@ -1,0 +1,21 @@
+#lang simply-scheme
+(define (entry tree) (car tree))
+(define (left-branch tree) (cadr tree))
+(define (right-branch tree) (caddr tree))
+(define (make-tree entry left right)
+  (list entry left right))
+
+(define my-tree (make-tree 8 (make-tree 5 '() '())
+                           (make-tree 12 '() '())))
+
+(define (all-smaller? tree num) 
+  (cond  ((null? tree) #t)
+         ((> num (entry tree)) (and (all-smaller? (left-branch tree) num) (all-smaller? (right-branch tree) num)))
+         ((< num (entry tree)) #f)
+         (else #f))
+  )
+
+
+(all-smaller? my-tree 15)
+
+(all-smaller? my-tree 10)
