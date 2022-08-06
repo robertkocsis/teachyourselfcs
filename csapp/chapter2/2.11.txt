@@ -1,0 +1,11 @@
+a:
+
+first = last = (array length - 1 )/2
+
+b:
+it sets the array element to zero because it's trying
+to swap the element with itself, both pointers point to the
+same location, so *a ^ *a = 0
+
+c:
+the exit condition should change from first <= last to first < last

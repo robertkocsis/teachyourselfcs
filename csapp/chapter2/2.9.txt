@@ -1,0 +1,16 @@
+A:
+
+black:   000 complement: 111 - white
+blue:    001 complement: 110 - yellow
+green:   010 complement: 101 - magenta
+cyan:    011 complement: 100 - red
+red:     100 complement: 011 - cyan
+magenta: 101 complement: 010 - green
+yellow:  110 complement: 001 - blue
+white:   111 complement: 000 - black
+
+B:
+
+Blue | Green = 011 - cyan
+yellow & cyan = 010 - green
+red ^ magenta = 001 - blue
