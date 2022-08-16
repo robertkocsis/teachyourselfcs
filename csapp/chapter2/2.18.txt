@@ -1,0 +1,10 @@
+$0x2e0,%rsp     a: 736
+-0x58(%rsp),%rax   b:  -88
+0x28(%rdi),%rax c:  40
+%rax,-0x30(%rsp) d: -48
+0x78(%rsp),%rax e: 120
+%rax,0x88(%rdi) f: 136
+0x1f8(%rsp),%raxA. g: 504
+0x8(%rsp),%rax h: 9
+%rax,0xc0(%rsp)H. i: 192
+-0x48(%rsp,%rdx,8),%rax j: 72
