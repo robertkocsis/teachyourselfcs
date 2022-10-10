@@ -1,0 +1,21 @@
+x           t2u4(x)
+
+-1          15
+
+-5          11
+
+-6          10
+
+-4          12
+
+1           1 
+
+8           8
+
+
+            x + 2w , x < 0
+T2U w (x) = 
+            x,x≥0
+
+this equations applies for the negative values in the table,
+the positive value remain unchanged

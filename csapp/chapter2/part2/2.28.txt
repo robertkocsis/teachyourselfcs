@@ -1,0 +1,7 @@
+A. the function will provide and incorrect results
+for all cases where the first string is smaller than the
+second string;
+
+B. this happens because the unsigned subtraction overflows
+and when the result is cast back into a number it can't be
+because it's too big.

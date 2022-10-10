@@ -1,4 +1,4 @@
-hex  ->   binary   ->   b2u    ->     b2t
+hex  ->   binary   ->   b2u    ->     b2t4
 
 0xA -> 1010 -> 2^3 + 2 = 10 -> -2^3 + 2 = -6
 
