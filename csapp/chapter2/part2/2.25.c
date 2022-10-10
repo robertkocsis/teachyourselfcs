@@ -17,9 +17,9 @@ float sum_elements(float a[], unsigned length)
 
 int main()
 {
-    float array[3] = {1, 2, 3};
+    float array[3] = {1, 2, 3.5};
 
-    printf("%f \n", sum_elements(array, 0U));
+    printf("%f \n", sum_elements(array, 3U));
 
     return 0;
 }

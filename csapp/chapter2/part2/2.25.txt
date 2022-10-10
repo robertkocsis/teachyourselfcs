@@ -1,4 +1,4 @@
 the error happens because if we are doing operations with
 at least one unsigned number than all numbers become unsigned,
-and you cant go below zero with unsigned numbers 
-if the length is 0
+and when you 0 - 1 with unsigned number becomes the max
+unsigned number, so the for loop will never stop;
