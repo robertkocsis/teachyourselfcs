@@ -1,0 +1,13 @@
+x                   -w/4 x
+
+hex decimal         decimal     hex
+1   1               15          F          
+
+4   4               12          c
+
+7   7               9           9
+
+A   10              6           6
+
+E   14              2           2
+
