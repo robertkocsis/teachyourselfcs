@@ -1,0 +1,8 @@
+A. it should provide an improvement because
+it's less likely to overflow.
+
+-- it doesn't actually :/ malloc still converts
+it back to a 32 bit int
+
+B. I would probably return NULL if the 
+ele_cnt * ele_size overflows.

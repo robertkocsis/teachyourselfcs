@@ -1,0 +1,57 @@
+/* Determine whether arguments can be multiplied without overflow */
+int tmult_ok(int x, int y) {
+    int p = x*y;
+    /* Either x is zero, or dividing p by x gives y */
+    return !x || p/x == y;
+}
+
+in case if x = 0 then !x will be true, 
+because 0 is considered false in C 
+
+
+x
+y
+p 
+q
+
+x * y = p + t2^w 
+
+1.
+
+lets say that x = 3  [011] and y = 2 [010]
+x * y will be 6 [000110] which overflows
+truncating it will be p = -2 [110]
+
+x * y = p + t*2^w
+
+so 6 = -2 + t * 2^3
+8 = t * 8
+t = 1
+so t != 0
+
+then let's say that x = 3 [011] and y = 1 [001]
+x * y = 3 [011] = p which doesn't flow over
+
+x * y = p + t*2^w
+3 = 3 + t*8
+t = 0
+
+2.
+
+if we use whole numbers then
+
+q = p / x
+
+so that means that  p = x * q + r where the r is the remainder
+from the division which will always be smaller than x
+
+3.
+Show that q = y if and only if r = t = 0.
+
+we can assume that t = 0 only when x * y doesn't overflow
+
+so naturally x * y = p and q = p / x then q = y
+
+if r = t = 0 then p = x * y + r where r should be 0
+
+
