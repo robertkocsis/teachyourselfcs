@@ -1,0 +1,12 @@
+if b is 0
+
+then (a << k) + b will always be the multiple
+of a by 2^k
+
+so if k is either 0,1,2 or 3 then
+the possible results are a*1, a*2, a*4 or a*8
+
+if b is equal to a then
+(a << k) + a will be
+
+a * (2^k + 1)

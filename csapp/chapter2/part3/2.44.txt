@@ -1,0 +1,40 @@
+int x = foo(); /* Arbitrary value */
+int y = bar(); /* Arbitrary value */
+
+unsigned ux = x;
+unsigned uy = y;
+
+A. (x > 0) || (x-1 < 0) 
+
+this is false in case if x is the minimum integer amount
+because min -1 overflows to the max amount
+
+B. (x & 7) != 7 || (x<<29 < 0)
+
+:/
+ 
+C. (x * x) >= 0
+
+this is false because it can overflow and become
+a negative number
+
+D. x < 0 || -x <= 0
+
+this is true because
+x < 0 checks for negative numbers
+-x <= 0 checks for numbers >= 0
+
+E. x > 0 || -x >= 0
+
+this is false, because if the x is the min integer
+then - min int will overflow because the max is smaller by one
+and the result will be negative again
+
+F. x+y == uy+ux
+
+True. Two’s-complement and unsigned addition have the same bit-level be-
+havior, and they are commutative.
+
+I didn't know this :/
+
+G. x*~y + uy*ux == -x
