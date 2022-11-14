@@ -1,0 +1,5 @@
+
+A. 10.111 before: 2.875 after: 3
+B. 11.010 before: 3.25  after: 3
+C. 11.000 before: 3     after: 3
+D. 10.110 before: 2.75  after: 3
